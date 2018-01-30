@@ -1,0 +1,17 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Random acts of kindness</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#" routerLink="/users">users list</a></li>
+      <li><a href="#" data-toggle="modal" routerLink="/user/new" >add new user</a></li>
+      <li><a href="#" onclick="sendMail()">send mails</a></li>
+      <li><a href="#" onclick="openfileDialog()">upload users from csv</a></li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" routerLink="/logout" onclick="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>

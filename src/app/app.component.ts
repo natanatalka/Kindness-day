@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  showCreateUser: boolean;
+
+  constructor() {
+    this.showCreateUser = false;
+  }
 }

@@ -1,0 +1,46 @@
+<h2>{{ user.name }} Details</h2>
+<form [formGroup]="userDetailsForm" class="col col-lg-6">
+  <app-email-validation [errors]="errors"></app-email-validation>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name"
+           required name="name" formControlName="name" [maxlength]="50" >
+  </div>
+  <!--<app-name-validation [errors]="errors"></app-name-validation>-->
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="text" class="form-control" id="email"
+           required name="email" formControlName="email"  [maxlength]="70">
+  </div>
+  <!--<app-email-validation [email]="userDetailsForm.controls['email']"></app-email-validation>-->
+
+
+  <div class="buttons">
+  <button type="button"  class="btn btn-secondary" routerLink="/users">Close</button>
+  <button type="button" class="btn btn-primary" style="float: right;margin-left:2%"  (click)="onSave()">Save
+    changes
+  </button>
+  <button type="button" class="btn btn-danger" data-target="#myModal" style="float: right;" data-toggle="modal">Delete
+    user
+  </button>
+  </div>
+</form>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete user</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete user?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delete()">Delete user</button>
+      </div>
+    </div>
+  </div>
+</div>

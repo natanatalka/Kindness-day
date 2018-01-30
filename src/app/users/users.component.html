@@ -1,0 +1,34 @@
+<div>
+  <h1>
+    Users
+  </h1>
+  <div>
+    <table class="users table table-hover">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Gift receiver</th>
+        <th>Unique Id</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users; let i = index" [routerLink]="['/users', user.id]">
+        <td>{{i + 1}}</td>
+        <td>{{ user.name}}</td>
+        <td>{{ user.email }}</td>
+        <td *ngIf="user.isActive">Active</td>
+        <td *ngIf="!user.isActive">Inactive</td>
+        <td *ngIf="user.receiver">{{ user.receiver.name }}</td>
+        <td *ngIf="!user.receiver"></td>
+        <td>{{ user.uniqueId }}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+<!--<app-new-user [showCreateUser]="showCreateUser"></app-new-user>-->
+<!--<app-user-details [user]="selectedUser"></app-user-details>-->
