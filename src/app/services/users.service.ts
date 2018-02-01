@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {User} from './user';
+import {User} from '../user';
 
 
 @Injectable()
@@ -24,6 +24,18 @@ export class UsersService {
   updateUser(id: number, user: User): Observable<any> {
     return this.http.put(this.usersUrl + `/${id}`, user).catch(this._serverError);
   }
+
+  sendMail(id: number): Observable<any> {
+    return this.http.get(this.usersUrl + `/mail/${id}`).catch(this._serverError);
+  }
+
+  sendAllMails(): Observable<any> {
+    return this.http.get(this.usersUrl + `/mails`).catch(this._serverError);
+  }
+  //
+  // upload() : Observable<any> {
+  //   // return this.http.
+  // }
 
   private _serverError(err: any) {
     if (err instanceof HttpErrorResponse) {

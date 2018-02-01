@@ -1,28 +1,36 @@
+
 <h2>{{ user.name }} Details</h2>
-<form [formGroup]="userDetailsForm" class="col col-lg-6">
-  <app-email-validation [errors]="errors"></app-email-validation>
+<form class="col col-lg-10" [formGroup]="userDetailsForm">
+  <app-validation [errors]="errors"></app-validation>
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name"
            required name="name" formControlName="name" [maxlength]="50" >
   </div>
-  <!--<app-name-validation [errors]="errors"></app-name-validation>-->
   <div class="form-group">
-    <label for="name">Email</label>
+    <label for="email">Email</label>
     <input type="text" class="form-control" id="email"
            required name="email" formControlName="email"  [maxlength]="70">
   </div>
-  <!--<app-email-validation [email]="userDetailsForm.controls['email']"></app-email-validation>-->
+  <div class="form-group">
+    <label class="checkbox-inline">
+      <input type="checkbox" name="favoriteColors" formControlName="isActive"  > Active
+    </label>
+  </div>
+
 
 
   <div class="buttons">
   <button type="button"  class="btn btn-secondary" routerLink="/users">Close</button>
-  <button type="button" class="btn btn-primary" style="float: right;margin-left:2%"  (click)="onSave()">Save
+  <button type="button" class="btn btn-primary" style="float: right;margin-left:1%;"  (click)="onSave()">Save
     changes
   </button>
-  <button type="button" class="btn btn-danger" data-target="#myModal" style="float: right;" data-toggle="modal">Delete
-    user
-  </button>
+    <a class="icon" (click)="sendMail()" >
+      <span class="glyphicon glyphicon-envelope"></span>
+    </a>
+    <a class="icon" (click)="delete()">
+      <span class="glyphicon 	glyphicon glyphicon-trash"></span>
+    </a>
   </div>
 </form>
 

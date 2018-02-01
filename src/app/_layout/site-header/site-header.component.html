@@ -6,12 +6,13 @@
     <ul class="nav navbar-nav">
       <li><a href="#" routerLink="/users">users list</a></li>
       <li><a href="#" data-toggle="modal" routerLink="/user/new" >add new user</a></li>
-      <li><a href="#" onclick="sendMail()">send mails</a></li>
+      <li><a href="#" (click)="sendMails()">send mails</a></li>
       <li><a href="#" onclick="openfileDialog()">upload users from csv</a></li>
-
+      <input type="file" id="upload-users" style="display:none;" (click)="upload()">
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#" routerLink="/logout" onclick="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
+

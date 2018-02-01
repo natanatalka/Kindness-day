@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../user';
-import {UsersService} from '../users.service';
+import {UsersService} from '../services/users.service';
 import {Observable} from 'rxjs/Observable';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import 'rxjs/Rx';
@@ -29,11 +29,16 @@ export class UserDetailsComponent implements OnInit {
         this.router.navigate(['/users']);
       },
       err => {
-        // console.log('err:', err);
         this.errors = err;
         console.log('error!!!:', this.errors);
       }
     );
+  }
+
+  sendMail(): void {
+    this.usersService.sendMail(this.user.id).subscribe(data => {
+      console.log(data);
+    });
   }
 
 
@@ -56,7 +61,8 @@ export class UserDetailsComponent implements OnInit {
       email: new FormControl(this.user.email, [
         Validators.required,
         Validators.email
-      ])
+      ]),
+      isActive: new FormControl(this.user.isActive)
     });
 
     // this.userDetailsForm.controls['name'].setValue(this.user.name);

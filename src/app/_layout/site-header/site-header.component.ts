@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UsersService} from '../../services/users.service';
 
 @Component({
   selector: 'app-site-header',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private  usersService: UsersService) {}
+
+  upload(): void {
+
+  };
+
+  sendMails(): void {
+    this.usersService.sendAllMails().subscribe(data => console.log(data));
+  }
 
   ngOnInit() {
   }

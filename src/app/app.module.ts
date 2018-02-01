@@ -7,7 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import {UsersService} from './users.service';
+import {UsersService} from './services/users.service';
 import {HttpClientModule} from '@angular/common/http';
 import { NewUserComponent } from './new-user/new-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -20,8 +20,8 @@ import { SiteFooterComponent } from './_layout/site-footer/site-footer.component
 import { UserLayoutComponent } from './_layout/user-layout/user-layout.component';
 import { ReceiverComponent } from './receiver/receiver.component';
 import { LoginComponent } from './login/login.component';
-import { NameValidationComponent } from './validators/name-validation/name-validation.component';
-import { EmailValidationComponent } from './validators/email-validation/email-validation.component';
+import { ValidationComponent  } from './validators/validation.component';
+import {LoginService} from './services/login.service';
 
 
 @NgModule({
@@ -37,8 +37,7 @@ import { EmailValidationComponent } from './validators/email-validation/email-va
     UserLayoutComponent,
     ReceiverComponent,
     LoginComponent,
-    NameValidationComponent,
-    EmailValidationComponent
+    ValidationComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +47,7 @@ import { EmailValidationComponent } from './validators/email-validation/email-va
     NgbModule,
     routing
   ],
-  providers: [UsersService, UserResolve],
+  providers: [UsersService, UserResolve, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,8 @@
+.icon {
+  float: right;
+  display: inline-block;
+  margin-left:5px;
+  margin-right:10px;
+  cursor: pointer;
+  font-size: 30px;
+}
