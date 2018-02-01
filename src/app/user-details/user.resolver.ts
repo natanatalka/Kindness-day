@@ -9,6 +9,6 @@ export class UserResolve implements Resolve<User> {
   constructor(private userService: UsersService) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.userService.getUser(route.paramMap.get('id'));
+    return this.userService.getUser( Number(route.paramMap.get('id')));
   }
 }

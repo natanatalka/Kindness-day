@@ -18,7 +18,7 @@ export class UsersService {
 
   getUser(id: number): Observable<User> {
     return this.http.get<User>(this.usersUrl + `/${id}`)
-      .map(res => res.data);
+      .map((res: any) => res.data);
   }
 
   updateUser(id: number, user: User): Observable<any> {
