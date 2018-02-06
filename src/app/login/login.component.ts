@@ -20,13 +20,15 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.loginService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(
       data => {
-        this.router.navigate(['/users']);
+          localStorage.setItem('access_token', data.token);
       },
       err => {
-        const arr = [err.error.message];
+        const arr = [err.error];
         this.errors = arr;
       });
   }
+
+
 
   ngOnInit() {
     this.loginForm = new FormGroup({

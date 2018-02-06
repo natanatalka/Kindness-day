@@ -4,4 +4,5 @@ export class User {
   email: string;
   isActive: string;
   uniqueId: string;
+  receiver: {name: string};
 }

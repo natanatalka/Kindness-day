@@ -1,18 +1,24 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Random acts of kindness</a>
+      <a class="navbar-brand" href="#"><b>Random acts of kindness</b></a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="#" routerLink="/users">users list</a></li>
-      <li><a href="#" data-toggle="modal" routerLink="/user/new" >add new user</a></li>
-      <li><a href="#" (click)="sendMails()">send mails</a></li>
-      <li><a href="#" onclick="openfileDialog()">upload users from csv</a></li>
-      <input type="file" id="upload-users" style="display:none;" (click)="upload()">
+      <li><a href="#" routerLink="/users"><b>users list</b></a></li>
+      <li><a href="#" data-toggle="modal" routerLink="/user/new" ><b>add new user</b></a></li>
+      <li><a href="#" (click)="sendMails()"><b>send mails</b></a></li>
+      <li><a href="#"  style="cursor: pointer">
+        <ng4-files-click (filesSelect)="filesSelect($event)">
+        <span  style="cursor: pointer">upload users from csv</span>
+      </ng4-files-click></a></li>
+
     </ul>
+
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#" routerLink="/logout" onclick="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a href="#" routerLink="/logout" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
+
+
   </div>
 </nav>
 

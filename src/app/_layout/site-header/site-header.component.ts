@@ -1,24 +1,55 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UsersService} from '../../services/users.service';
+import {
+    Ng4FilesStatus,
+    Ng4FilesSelected
+} from '../../ng4-files';
 
 @Component({
-  selector: 'app-site-header',
-  templateUrl: './site-header.component.html',
-  styleUrls: ['./site-header.component.css']
+    selector: 'app-site-header',
+    templateUrl: './site-header.component.html',
+    styleUrls: ['./site-header.component.css']
 })
 export class SiteHeaderComponent implements OnInit {
 
-  constructor(private  usersService: UsersService) {}
+    messages: string[];
 
-  upload(): void {
+    constructor(private  usersService: UsersService) {
+    }
 
-  };
+    public selectedFiles;
 
-  sendMails(): void {
-    this.usersService.sendAllMails().subscribe(data => console.log(data));
-  }
+    public filesSelect(selectedFiles: Ng4FilesSelected): void {
+        if (selectedFiles.status !== Ng4FilesStatus.STATUS_SUCCESS) {
+            this.selectedFiles = selectedFiles.status;
+            return;
 
-  ngOnInit() {
-  }
+            // Hnadle error statuses here
+        }
+
+        this.selectedFiles = selectedFiles.files;
+
+        this.usersService.upload(this.selectedFiles[0]).subscribe(data => {
+            this.messages = [];
+            this.messages.push(data.message);
+        });
+    }
+
+    sendMails(): void {
+        this.usersService.sendAllMails().subscribe(data => {
+            this.messages = [];
+            this.messages.push(data.message);
+        });
+    }
+    logout(): void {
+        localStorage.removeItem('access_token');
+    }
+
+    onNotify(message: string): void {
+        alert(message);
+    }
+
+    ngOnInit() {
+    }
 
 }

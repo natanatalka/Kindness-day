@@ -11,7 +11,8 @@ export class UsersComponent implements OnInit {
 
   users: User[];
   selectedUser: User;
-
+  messages: string[];
+  queryString: string;
 
   getUsers(): void {
     this.usersService.getUsers().subscribe(users => this.users = users);
