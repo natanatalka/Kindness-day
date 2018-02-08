@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'kindness.testing.softjourn.if.ua/api'
+  url: 'kindness.testing.softjourn.if.ua'
 };
