@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class UsersService {
 
-    usersUrl = `http://${environment.url}/users`;
+    usersUrl = `http://${environment.url}/api/users`;
 
     constructor(private http: HttpClient) {
     }
@@ -19,16 +19,16 @@ export class UsersService {
     }
 
     getUser(id: number): Observable<User> {
-        return this.http.get<User>(this.usersUrl + `/${id}`)
+        return this.http.get<User>(`${this.usersUrl}/${id}`)
             .map((res: any) => res.data);
     }
 
     updateUser(id: number, user: User): Observable<any> {
-        return this.http.put(this.usersUrl + `/${id}`, user).catch(this._serverError);
+        return this.http.put(`${this.usersUrl}/${id}`, user).catch(this._serverError);
     }
 
     sendMail(id: number): Observable<any> {
-        return this.http.get(this.usersUrl + `/mail/${id}`).catch(this._serverError);
+        return this.http.get(`${this.usersUrl}/mail/${id}`).catch(this._serverError);
     }
 
     sendAllMails(): Observable<any> {
@@ -42,7 +42,19 @@ export class UsersService {
         const form = new FormData();
         form.append('file', file);
 
-        return this.http.post(this.usersUrl + '/upload', form, {headers: headers}).catch(this._serverError);
+        return this.http.post(`${this.usersUrl}/upload`, form, {headers: headers}).catch(this._serverError);
+    }
+
+    createUser(user: User): Observable<any> {
+        return this.http.post(this.usersUrl, user).catch(this._serverError);
+    }
+
+    deleteUser(userId: number): Observable<any> {
+        return this.http.delete( `${this.usersUrl}/${userId}`);
+    }
+
+    deleteReceiver(userId: number): Observable<any> {
+        return this.http.delete(`${this.usersUrl}/${userId}/receiver`);
     }
 
     private _serverError(err: any) {
@@ -52,17 +64,4 @@ export class UsersService {
         return Observable.throw(err || 'backend server error');
     }
 
-
-    createUser(user: User): Observable<any> {
-        // const headers = new HttpHeaders();
-        // const  token = localStorage.getItem('token');
-        // console.log(token);
-        // headers.append('Authorization', 'Bearer ' + token);
-        // console.log(headers);
-        return this.http.post(this.usersUrl, user).catch(this._serverError);
-    }
-
-    deleteUser(userId: number): Observable<any> {
-        return this.http.delete(this.usersUrl + `/${userId}`);
-    }
 }

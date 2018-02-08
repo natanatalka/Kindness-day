@@ -20,9 +20,12 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.loginService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(
       data => {
+          console.log('test');
           localStorage.setItem('access_token', data.token);
+          this.router.navigate(['/users']);
       },
       err => {
+        console.log(err);
         const arr = [err.error];
         this.errors = arr;
       });

@@ -5,12 +5,13 @@ import {environment} from '../../environments/environment';
 
 @Injectable()
 export class LoginService {
-  baseUrl = `http://${environment.url}`;
+  baseUrl = `http://${environment.url}/api`;
 
   constructor(private http: HttpClient) {
   }
 
   login(username, password): Observable<any> {
+    console.log(this.baseUrl);
     return this.http.post(this.baseUrl + '/login', {username: username, password: password});
   }
 
