@@ -4,14 +4,17 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {User} from '../user';
 import {base64} from 'file-base64';
 import { environment } from '../../environments/environment';
+import {Receiver} from '../../receiver';
 
 
 @Injectable()
 export class UsersService {
 
+    baseUrl = `http://${environment.url}/api`;
     usersUrl = `http://${environment.url}/api/users`;
 
     constructor(private http: HttpClient) {
+        console.log(this.usersUrl);
     }
 
     getUsers(): Observable<User[]> {
@@ -41,7 +44,6 @@ export class UsersService {
 
         const form = new FormData();
         form.append('file', file);
-
         return this.http.post(`${this.usersUrl}/upload`, form, {headers: headers}).catch(this._serverError);
     }
 
@@ -55,6 +57,10 @@ export class UsersService {
 
     deleteReceiver(userId: number): Observable<any> {
         return this.http.delete(`${this.usersUrl}/${userId}/receiver`);
+    }
+
+    getReceiver(uniqueId: string): Observable<Receiver> {
+        return this.http.get(`${this.baseUrl}/receiver/${uniqueId}`).catch(this._serverError);
     }
 
     private _serverError(err: any) {

@@ -4,12 +4,12 @@ import {UserDetailsComponent} from './user-details/user-details.component';
 import {UserResolve} from './user-details/user.resolver';
 import {UsersComponent} from './users/users.component';
 import {SiteLayoutComponent} from './_layout/site-layout/site-layout.component';
-import {ReceiverComponent} from './receiver/receiver.component';
 import {LoginComponent} from './login/login.component';
 import {AuthGuardService as AuthGuard} from './services/auth-guard.service';
+import {UserLayoutComponent} from './_layout/user-layout/user-layout.component';
+import {ReceiverComponent} from './receiver/receiver.component';
 
 const appRoutes: Routes = [
-
     {
         path: '',
         component: SiteLayoutComponent,
@@ -41,7 +41,7 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'receiver',
+        path: 'receiver/:uniqueId',
         component: ReceiverComponent
     },
     {

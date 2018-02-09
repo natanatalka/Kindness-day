@@ -17,7 +17,6 @@ import {SiteLayoutComponent} from './_layout/site-layout/site-layout.component';
 import {SiteHeaderComponent} from './_layout/site-header/site-header.component';
 import {SiteFooterComponent} from './_layout/site-footer/site-footer.component';
 import {UserLayoutComponent} from './_layout/user-layout/user-layout.component';
-import {ReceiverComponent} from './receiver/receiver.component';
 import {LoginComponent} from './login/login.component';
 import {ValidationComponent} from './validators/validation.component';
 import {LoginService} from './services/login.service';
@@ -29,6 +28,7 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import {environment} from '../environments/environment';
+import { ReceiverComponent } from './receiver/receiver.component';
 
 const authConfig = {
     tokenGetter: () => {
@@ -48,12 +48,12 @@ const authConfig = {
         SiteHeaderComponent,
         SiteFooterComponent,
         UserLayoutComponent,
-        ReceiverComponent,
         LoginComponent,
         ValidationComponent,
         SuccessMessagesComponent,
         FilterPipe,
-        ModalsComponent
+        ModalsComponent,
+        ReceiverComponent
     ],
     entryComponents: [
         ModalsComponent

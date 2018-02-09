@@ -1,0 +1,50 @@
+
+.image-cropper {
+    width: 476px;
+    height: 476px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: -855px;
+    margin-left: 680px;
+    z-index: 300;
+}
+
+img {
+    display: inline;
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+#main-text {
+    margin-left: 557px;
+    margin-top: 13px;
+    font-size: 24pt;
+    font-family: 'Montserrat';
+    color: #3C3352;
+    position: absolute;
+    z-index: 1;
+}
+
+#small-text {
+    font-size: 20pt;
+    font-family: 'Montserrat';
+    color: #3C3352;
+    margin-top: -440px;
+    margin-left: 280px;
+    position: relative;
+    z-index: 4;
+    width: 400px;
+    height: 100px;
+}
+
+#small-image {
+    margin-top: -110px;
+    margin-left: 200px;
+    position: relative;
+    z-index: 3;
+    width: 550px;
+    height: 140px;
+}

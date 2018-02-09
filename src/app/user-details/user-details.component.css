@@ -6,3 +6,25 @@
   cursor: pointer;
   font-size: 30px;
 }
+
+.input-bar {
+  display: table;
+  width: 100%;
+}
+
+.input-bar-item > button {
+  margin-left: 5px;
+}
+
+.width100 {
+  width: 100%;
+}
+.input-bar .form-group {
+  float: left;
+  vertical-align: middle;
+  width: 93%;
+}
+.input-bar-item-btn {
+  float: left;
+  width:7%;
+}
