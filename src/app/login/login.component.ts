@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       },
       err => {
         console.log(err);
-        const arr = [err.error];
+        const arr = [err.error.message];
         this.errors = arr;
       });
   }
