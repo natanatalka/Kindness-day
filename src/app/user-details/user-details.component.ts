@@ -53,7 +53,6 @@ export class UserDetailsComponent implements OnInit {
                     this.usersService.updateUser(this.user.id, this.userDetailsForm.value).subscribe((data: any) => {
                             this.messages = data.message;
                             setTimeout(() => this.messages = null, 5000);
-                            // setTimeout(() => this.router.navigate(['/users']), 3000);
                         },
                         err => {
                         this.errorHandle(err);

@@ -29,6 +29,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 import {environment} from '../environments/environment';
 import { ReceiverComponent } from './receiver/receiver.component';
+import {ReceiverResolve} from './receiver/receiver.resolver';
 
 const authConfig = {
     tokenGetter: () => {
@@ -74,6 +75,7 @@ const authConfig = {
     providers: [
         UsersService,
         UserResolve,
+        ReceiverResolve,
         LoginService,
         AuthGuardService,
         AuthService

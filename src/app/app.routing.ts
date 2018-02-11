@@ -8,6 +8,7 @@ import {LoginComponent} from './login/login.component';
 import {AuthGuardService as AuthGuard} from './services/auth-guard.service';
 import {UserLayoutComponent} from './_layout/user-layout/user-layout.component';
 import {ReceiverComponent} from './receiver/receiver.component';
+import {ReceiverResolve} from './receiver/receiver.resolver';
 
 const appRoutes: Routes = [
     {
@@ -42,7 +43,10 @@ const appRoutes: Routes = [
     },
     {
         path: 'receiver/:uniqueId',
-        component: ReceiverComponent
+        component: ReceiverComponent,
+        resolve: {
+            receiver: ReceiverResolve
+        },
     },
     {
         path: 'login',
