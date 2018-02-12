@@ -1,3 +1,4 @@
+<body>
 <div class="main-text">
     <p> Welcome to the acts of <b>Kindness day</b> randomizer.
         <br>This instrument will help you to make someone's day better.</p>
@@ -11,10 +12,7 @@
     <img  alt="Flowers" class="main-pic">
 </picture>
 <div>
-    <picture>
-        <source srcset={{receiver.path}}>
-        <img class="user-pic" alt="User">
-    </picture>
+        <img class="user-pic" alt="User" [src]="this.sanitization.bypassSecurityTrustUrl(receiver.path)" >
 </div>
 
 
@@ -22,3 +20,5 @@
     <p>This time <span style="color: #2EB872;"><b>{{receiver.receiver}}</b></span>
         <br> will be lucky to receive a gift from you </p>
 </div>
+
+</body>
