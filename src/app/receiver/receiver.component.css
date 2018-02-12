@@ -1,6 +1,6 @@
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1800px) {
     .small-text {
-        font-size: 10px;
+        font-size: 21px !important;
     }
 }
 
