@@ -1,24 +1,36 @@
 <body>
-<div class="main-text">
-    <p> Welcome to the acts of <b>Kindness day</b> randomizer.
-        <br>This instrument will help you to make someone's day better.</p>
-</div>
-<picture>
-    <source srcset="/assets/back1.png">
-    <img  alt="Flowers" class="background">
-</picture>
-<picture>
-    <source srcset="/assets/boy-talk.png">
-    <img  alt="Flowers" class="main-pic">
-</picture>
-<div>
-        <img class="user-pic" alt="User" [src]="this.sanitization.bypassSecurityTrustUrl(receiver.path)" >
-</div>
+<div style="max-width: 1920px;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    background-color: #F5F5F5; height: 100%">
+    <div class="main-text">
+        <p> Welcome to the acts of <b>Kindness day</b> randomizer.
+            <br>This instrument will help you to make someone's day better.</p>
+    </div>
+    <picture>
+        <source srcset="/assets/back1.png">
+        <img  alt="Flowers" class="background">
+    </picture>
+    <picture>
+        <source srcset="/assets/boy-talk.png">
+        <img  alt="Flowers" class="main-pic">
+    </picture>
+    <div>
+        <table width="100%" height="100%" align="center">
+            <tr><td>
+                <img class="user-pic" alt="User" [src]="this.sanitization.bypassSecurityTrustUrl(receiver.path)" >
+            </td></tr>
+        </table>
+        <!--<img class="user-pic" alt="User" [src]="this.sanitization.bypassSecurityTrustUrl(receiver.path)" >-->
+    </div>
 
 
-<div class="small-text">
-    <p>This time <span style="color: #2EB872;"><b>{{receiver.receiver}}</b></span>
-        <br> will be lucky to receive a gift from you </p>
+    <div class="small-text">
+        <p>This time <span style="color: #2EB872;"><b>{{receiver.receiver}}</b></span>
+            <br> will be lucky to receive a gift from you </p>
+    </div>
 </div>
+
 
 </body>
