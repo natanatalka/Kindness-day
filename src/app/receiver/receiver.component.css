@@ -1,50 +1,57 @@
-
-.image-cropper {
-    width: 476px;
-    height: 476px;
+body {
+    justify-content: center;
+    display: flex;
     position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    margin-top: -855px;
-    margin-left: 680px;
-    z-index: 300;
+    background-color: #F5F5F5;
 }
 
-img {
-    display: inline;
-    position: relative;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
-}
-
-#main-text {
-    margin-left: 557px;
-    margin-top: 13px;
-    font-size: 24pt;
-    font-family: 'Montserrat';
-    color: #3C3352;
+.main-text {
+    font-size: 2.0vw;
     position: absolute;
-    z-index: 1;
-}
-
-#small-text {
-    font-size: 20pt;
+    z-index:2;
+    LINE-HEIGHT:2.2vw;
+    text-align: center;
     font-family: 'Montserrat';
     color: #3C3352;
-    margin-top: -440px;
-    margin-left: 280px;
-    position: relative;
-    z-index: 4;
-    width: 400px;
-    height: 100px;
+    margin-top: 1%
 }
 
-#small-image {
-    margin-top: -110px;
-    margin-left: 200px;
+.main-pic {
+    width:100%;
+    max-width: 1920px;
+    max-height: 1039px;
     position: relative;
-    z-index: 3;
-    width: 550px;
-    height: 140px;
+    z-index:2
+}
+
+.background {
+    width:100%;
+    max-width: 1920px;
+    max-height: 1039px;
+    position:absolute;
+    z-index:1
+}
+
+.user-pic {
+    border-radius: 50%;
+    width:26%;
+    height:48%;
+    position: absolute;
+    z-index:2;
+    margin-left:-63.1%;
+    margin-top:6.5%;
+    max-width: 477px;
+    max-height: 477px;
+}
+
+.small-text {
+    font-size: 1.2vw;
+    position: absolute;
+    z-index:2;
+    LINE-HEIGHT:1.5vw;
+    text-align: left;
+    font-family: 'Montserrat';
+    color: #3C3352;
+    margin-top: 33%;
+    margin-left: -15%
 }

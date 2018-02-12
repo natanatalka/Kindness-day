@@ -24,14 +24,14 @@ export class SiteHeaderComponent implements OnInit {
             this.selectedFiles = selectedFiles.status;
             return;
 
-            // Hnadle error statuses here
+            // Handle error statuses here
         }
 
         this.selectedFiles = selectedFiles.files;
 
         this.usersService.upload(this.selectedFiles[0]).subscribe(data => {
-            this.messages = [];
-            this.messages.push(data.message);
+            this.messages = data.message;
+            setTimeout(() => this.messages = null, 5000);
         });
     }
 
