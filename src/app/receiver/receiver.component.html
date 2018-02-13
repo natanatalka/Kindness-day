@@ -1,38 +1,38 @@
-<body>
-<div style="
-    min-width: 500px;
-    max-width: 1920px;
-    justify-content: center;
-    display: flex;
-    position: relative;
-    background-color: #F5F5F5; height: 100%">
-    <div class="main-text">
-        <p> Welcome to the acts of <b>Kindness day</b> randomizer.
-            <br>This instrument will help you to make someone's day better.</p>
-    </div>
-    <picture>
-        <source srcset="/assets/back1.png">
-        <img  alt="Flowers" class="background">
-    </picture>
-    <picture>
-        <source srcset="/assets/boy-talk.png">
-        <img  alt="Flowers" class="main-pic">
-    </picture>
-    <div>
-        <table width="100%" height="100%" align="center">
-            <tr><td>
-                <img class="user-pic" alt="User" [src]="this.sanitization.bypassSecurityTrustUrl(receiver.path)" >
-            </td></tr>
-        </table>
-        <!--<img class="user-pic" alt="User" [src]="this.sanitization.bypassSecurityTrustUrl(receiver.path)" >-->
-    </div>
+
+<div class="container-full">
+
+<div class="container">
 
 
-    <div class="small-text">
-        <p>This time <span style="color: #2EB872;"><b>{{receiver.receiver}}</b></span>
-            <br> will be lucky to receive a gift from you </p>
+
+        <div class="row text-center main-text ">
+            Welcome to the acts of <b>Kindness day</b> randomizer.
+            <br>This instrument will help you to make someone's day better.
+        </div>
+
+
+        <div class="user">
+            <img class="user-pic" alt="User" [src]="this.sanitization.bypassSecurityTrustUrl(receiver.path)">
+        </div>
+
+
+        <div class="text-popup">
+            This time <span style="color: #2EB872;font-weight: bold">{{receiver.receiver}}</span>
+            <br> will be lucky to receive a gift from you
+
+        </div>
+
+
+    <div class="bg-boy">
+
     </div>
+
+    <div class="bottom-text">
+        “Kindness is a language which the deaf can hear and the blind can see.” Mark Twain
+
+    </div>
+
 </div>
 
 
-</body>
+</div>

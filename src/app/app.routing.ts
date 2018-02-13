@@ -9,6 +9,7 @@ import {AuthGuardService as AuthGuard} from './services/auth-guard.service';
 import {UserLayoutComponent} from './_layout/user-layout/user-layout.component';
 import {ReceiverComponent} from './receiver/receiver.component';
 import {ReceiverResolve} from './receiver/receiver.resolver';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
     {
@@ -56,7 +57,7 @@ const appRoutes: Routes = [
         path: 'logout',
         redirectTo: 'login'
     },
-    {path: '**', component: UsersComponent}
+    {path: '**', component: PageNotFoundComponent}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes, {enableTracing: false});

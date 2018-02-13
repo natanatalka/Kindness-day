@@ -1,75 +1,137 @@
-@media only screen and (min-width: 1800px) {
-    .small-text {
-        font-size: 21px !important;
-    }
+body {
+    background-color: #F5F5F5 !important;
 }
 
-body {
-    justify-content: center;
-    display: flex;
+.container-full {
     position: relative;
-    background-color: #F5F5F5;
+    min-height: 664px;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    background-color: #F5F5F5 !important;
+    font-size: 14px;
 }
+
+.container {
+    background-color: #F5F5F5;
+    background: url('../../assets/back1.png');
+    background-position: 50% 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bg-boy {
+    width: 100%;
+    background: url('../../assets/boy-only.png');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 200px;
+
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+
+
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    color: #9E9E9E;
+
+}
+
 
 .main-text {
-    font-size: 2.0vw;
-    position: absolute;
-    z-index:2;
-    LINE-HEIGHT:2.2vw;
-    text-align: center;
-    font-family: 'Montserrat';
-    color: #3C3352;
-    margin-top: 0.5%
+    padding: 5px;
+    font-size: 24px;
+
 }
 
-.main-pic {
-    width:100%;
-    max-width: 1920px;
-    max-height: 1039px;
-    position: relative;
-    z-index:3
+.user {
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 32px;
 }
 
-.background {
-    width:100%;
-    max-width: 1920px;
-    max-height: 1039px;
-    position:absolute;
-    z-index:1
-}
-
-.user-pic {
+.user img {
     border-radius: 50%;
     width:26%;
     height:48%;
-    position: absolute;
-    z-index:2;
-    margin: auto;
-    top: -27%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    /*left: 50%;*/
-    /*top: 58%;*/
-    /*margin-left: -13%;*/
-    /*margin-top: -24%;*/
-
-
-    /*margin-left:-63.1%;*/
-    /*margin-top:6.5%;*/
-    max-width: 477px;
-    max-height: 477px;
 }
 
-.small-text {
-    font-size: 1.2vw;
-    position: absolute;
-    z-index:4;
-    LINE-HEIGHT:1.5vw;
-    text-align: left;
-    font-family: 'Montserrat';
-    color: #3C3352;
-    margin-top: 33%;
-    margin-left: -15%
+
+.main-text {
+  width: 100%;
+}
+
+.text-popup {
+
+    height: 140px;
+
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+@media only screen and (max-width: 660px) {
+
+    .container-full {
+        background-size: cover;
+    }
+
+    .user img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .main-text {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .bg-boy {
+        height: 300px;
+    }
+
+    .text-popup {
+        background: url('../../assets/talk.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+
+        width: 300px;
+        height: 140px;
+
+        text-align: center;
+        padding: 10px;
+    }
+
+    .bottom-text {
+        bottom: 20px;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .text-popup {
+        margin-left: 120px;
+        margin-top: -80px;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .text-popup {
+        margin-left: 80px;
+        margin-top: -20px;
+    }
 }
